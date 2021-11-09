@@ -11,7 +11,7 @@ function Styleguide() {
       <div
         className={styles.colors}
         style={{
-          backgroundColor: 'var(--primary-color',
+          backgroundColor: 'var(--primary-color)',
           height: '3rem',
           width: '3rem',
           borderRadius: '50%',
