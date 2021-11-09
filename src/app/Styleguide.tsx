@@ -25,7 +25,7 @@ function Styleguide() {
           borderRadius: '0.5rem',
           placeItems: 'center',
           textAlign: 'center',
-          backgroundColor: 'var(--primary-bg-color',
+          backgroundColor: 'var(--primary-bg-color)',
         }}
       >
         <h3>Document text</h3>
