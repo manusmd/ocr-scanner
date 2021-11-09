@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00e0ee;
+  --primary-bg-color: #dfdfdf;
+  --primary-font: 'Roboto', sans-serif;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
 body {
   margin: 0;
+  font-family: var(--primary-font);
 }
