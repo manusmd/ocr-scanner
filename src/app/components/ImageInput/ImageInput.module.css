@@ -1,0 +1,23 @@
+.page {
+  position: fixed;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+}
+
+.input {
+  display: none;
+}
+
+.fileUpload {
+  grid-row: 2/3;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.uploadImage {
+  height: 20rem;
+}
