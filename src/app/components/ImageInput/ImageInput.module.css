@@ -12,5 +12,11 @@
 }
 
 .uploadImage {
-  height: 20rem;
+  width: 90%;
+  height: auto;
+}
+
+.label {
+  display: grid;
+  place-items: center;
 }

@@ -19,7 +19,7 @@ function ImageInput({ onUpload }: ImageInputProps) {
   };
 
   return (
-    <label>
+    <label className={styles.label}>
       <input
         className={styles.input}
         type="file"
