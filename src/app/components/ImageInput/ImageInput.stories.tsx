@@ -3,7 +3,7 @@ import ImageInput from './ImageInput';
 
 export default {
   component: ImageInput,
-  title: 'ImageInput',
+  title: 'Component/ImageInput',
 };
 
-export const Default = () => <ImageInput />;
+export const Default = () => <ImageInput onUpload={console.log} />;
