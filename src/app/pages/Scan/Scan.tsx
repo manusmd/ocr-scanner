@@ -7,9 +7,12 @@ function Scan() {
   return (
     <div className={styles.container}>
       <ImageInput onUpload={setImageURL} />
-      <button className={styles.scanBtn} disabled={imageURL === null}>
-        Scan
-      </button>
+      <div className={styles.buttons}>
+        <button className={styles.scanBtn} disabled={imageURL === null}>
+          Scan
+        </button>
+        <button className={styles.skipBtn}>Skip</button>
+      </div>
     </div>
   );
 }
