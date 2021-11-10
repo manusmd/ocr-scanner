@@ -11,13 +11,6 @@
   display: none;
 }
 
-.fileUpload {
-  grid-row: 2/3;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
 .uploadImage {
   height: 20rem;
 }
