@@ -1,0 +1,33 @@
+.progress {
+  display: grid;
+  place-items: center;
+  height: 3rem;
+  background-color: #dfdfdf;
+  border-radius: 1rem;
+}
+
+progress {
+  appearance: none;
+}
+
+progress[value] {
+  appearance: none;
+}
+
+.progressBar {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+progress::-webkit-progress-bar {
+  border-radius: 1rem;
+  height: 1rem;
+  background-color: white;
+  width: 100%;
+  border: 1px solid black;
+}
+
+progress::-webkit-progress-value {
+  border-radius: 1rem;
+  background-color: black;
+}
