@@ -9,9 +9,7 @@ export type ProgressProps = {
 function Progress({ value, status }: ProgressProps): JSX.Element {
   return (
     <>
-      <div>
-        <progress className={styles.progressBar} value={value} max="100" />
-      </div>
+      <progress className={styles.progressBar} value={value} max="100" />
       <p className={styles.progress}>{status}</p>
     </>
   );
