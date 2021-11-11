@@ -1,0 +1,22 @@
+.page {
+  position: fixed;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+}
+
+.input {
+  display: none;
+}
+
+.uploadImage {
+  width: 90%;
+  height: auto;
+}
+
+.label {
+  display: grid;
+  place-items: center;
+}
