@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from 'react';
 import styles from './AddDocumentForm.module.css';
+import usePostDocument from '../../utils/usePostDocument';
 
 type AddDocumentFormProps = {
   text: string;
@@ -7,23 +8,16 @@ type AddDocumentFormProps = {
 
 export default function AddDocumentForm({ text }: AddDocumentFormProps) {
   const [title, setTitle] = useState('');
-  const [saveDisabled, setSaveDisabled] = useState(false);
+  const { saveDisabled, postDocument } = usePostDocument();
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
     const document = {
       title,
       text,
     };
-    fetch('http://localhost:1337/documents', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(document),
-    });
-    setSaveDisabled(true);
+    await postDocument(document);
   };
   return (
     <form className={styles.saveForm} onSubmit={handleSubmit}>
