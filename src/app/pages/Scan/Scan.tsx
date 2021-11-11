@@ -13,10 +13,8 @@ function Scan() {
     <div className={styles.container}>
       {text ? <p>{text}</p> : <ImageInput onUpload={setImageURL} />}
       <div className={styles.buttons}>
-        {scanActive && progress ? (
+        {scanActive && progress && (
           <Progress value={progress.progress * 100} status={progress.status} />
-        ) : (
-          <p></p>
         )}
         {text ? (
           <AddDocumentForm text={text} />
