@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './searchBar.module.css';
+import styles from './SearchBar.module.css';
 
-export default function searchBar() {
+export default function SearchBar() {
   return <input className={styles.input} type="text" placeholder="Search..." />;
 }
