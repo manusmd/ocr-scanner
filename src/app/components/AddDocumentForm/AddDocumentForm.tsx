@@ -7,6 +7,7 @@ type AddDocumentFormProps = {
 
 export default function AddDocumentForm({ text }: AddDocumentFormProps) {
   const [title, setTitle] = useState('');
+  const [saveDisabled, setSaveDisabled] = useState(false);
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -22,6 +23,7 @@ export default function AddDocumentForm({ text }: AddDocumentFormProps) {
       },
       body: JSON.stringify(document),
     });
+    setSaveDisabled(true);
   };
   return (
     <form className={styles.saveForm} onSubmit={handleSubmit}>
@@ -31,7 +33,7 @@ export default function AddDocumentForm({ text }: AddDocumentFormProps) {
         type="text"
         onChange={(event) => setTitle(event.target.value)}
       />
-      <button className={styles.saveBtn} type="submit">
+      <button disabled={saveDisabled} className={styles.saveBtn} type="submit">
         Save
       </button>
     </form>
