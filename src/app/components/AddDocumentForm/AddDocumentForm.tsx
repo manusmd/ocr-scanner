@@ -4,9 +4,10 @@ import usePostDocument from '../../utils/usePostDocument';
 
 type AddDocumentFormProps = {
   text: string;
+  image: File;
 };
 
-export default function AddDocumentForm({ text }: AddDocumentFormProps) {
+export default function AddDocumentForm({ text, image }: AddDocumentFormProps) {
   const [title, setTitle] = useState('');
   const { saveDisabled, postDocument } = usePostDocument();
 
@@ -16,6 +17,7 @@ export default function AddDocumentForm({ text }: AddDocumentFormProps) {
     const document = {
       title,
       text,
+      image,
     };
     await postDocument(document);
   };
