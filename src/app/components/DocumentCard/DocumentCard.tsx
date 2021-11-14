@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from './DocumentCard.module.css';
 
-type addDocumentCardProps = {
+export type addDocumentCardProps = {
+  id?: number;
   title: string;
+  text: string;
 };
 
-export default function addDocumentCard({ title }: addDocumentCardProps) {
+export default function AddDocumentCard({
+  title,
+}: addDocumentCardProps): JSX.Element {
   return (
     <div className={styles.container}>
       <p>{title}</p>
