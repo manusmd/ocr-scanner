@@ -3,10 +3,9 @@ import styles from './ImageInput.module.css';
 
 type ImageInputProps = {
   onUpload: (url: string) => void;
-  image: (image: File) => void;
 };
 
-function ImageInput({ onUpload, image }: ImageInputProps) {
+function ImageInput({ onUpload }: ImageInputProps) {
   const [imageURL, setImageURL] = useState<string | null>(null);
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files || event.target.files.length === 0) {
@@ -14,7 +13,6 @@ function ImageInput({ onUpload, image }: ImageInputProps) {
     }
     const file = event.target.files[0];
     const newImageURL = URL.createObjectURL(file);
-    image(file);
 
     setImageURL(newImageURL);
     onUpload(newImageURL);
