@@ -9,10 +9,12 @@ export type addDocumentCardProps = {
 
 export default function AddDocumentCard({
   title,
+  text,
 }: addDocumentCardProps): JSX.Element {
   return (
     <div className={styles.container}>
-      <p>{title}</p>
+      <h2>{title}</h2>
+      <p className={styles.text}>{text}</p>
     </div>
   );
 }
