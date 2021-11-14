@@ -6,6 +6,4 @@ export default {
   title: 'Component/ImageInput',
 };
 
-export const Default = () => (
-  <ImageInput onUpload={console.log} image={() => null} />
-);
+export const Default = () => <ImageInput onUpload={console.log} />;
