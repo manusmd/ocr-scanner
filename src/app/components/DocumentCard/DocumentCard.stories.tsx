@@ -6,4 +6,4 @@ export default {
   title: 'Component/DocumentCard',
 };
 
-export const Default = () => <DocumentCard />;
+export const Default = () => <DocumentCard title="Zahnarzt Rechnung" />;

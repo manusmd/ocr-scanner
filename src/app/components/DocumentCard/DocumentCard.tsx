@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './DocumentCard.module.css';
 
-export default function addDocumentCard() {
+type addDocumentCardProps = {
+  title: string;
+};
+
+export default function addDocumentCard({ title }: addDocumentCardProps) {
   return (
     <div className={styles.container}>
-      <img src="" alt="Recognized Image" />
-      <p>Picture Title</p>
+      <p>{title}</p>
     </div>
   );
 }
