@@ -4,9 +4,15 @@ import fetchDocuments from '../../utils/fetchDocuments';
 import AddDocumentCard, {
   addDocumentCardProps,
 } from '../../components/DocumentCard/DocumentCard';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 export default function Documents(): JSX.Element {
   const [documents, setDocuments] = useState<addDocumentCardProps[]>([]);
+  const [search, setSearch] = useState('');
+
+  const filteredDocuments = documents?.filter((document) =>
+    document.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   useEffect(() => {
     async function fetch() {
@@ -21,11 +27,16 @@ export default function Documents(): JSX.Element {
   return (
     <>
       <h1 className={styles.title}>All Documents</h1>
-      {documents.length === 0 ? (
+      <SearchBar onSearch={setSearch} />
+      {filteredDocuments.length === 0 ? (
         <p className={styles.none}>Nothing to see here</p>
       ) : (
-        documents.map((document) => (
-          <AddDocumentCard title={document.title} text={document.text} />
+        filteredDocuments.map((document) => (
+          <AddDocumentCard
+            key={document.id}
+            title={document.title}
+            text={document.text}
+          />
         ))
       )}
     </>
