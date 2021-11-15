@@ -1,6 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './SearchBar.module.css';
 
-export default function SearchBar() {
-  return <input className={styles.input} type="text" placeholder="Search..." />;
+type SearchBarProps = {
+  onSearch: (value: string) => void;
+};
+
+export default function SearchBar({ onSearch }: SearchBarProps) {
+  const [value, setValue] = useState('');
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      console.log(value);
+      onSearch(value);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [value]);
+  return (
+    <input
+      value={value}
+      className={styles.input}
+      onChange={(event) => setValue(event.target.value)}
+      type="text"
+      placeholder="Search..."
+    />
+  );
 }

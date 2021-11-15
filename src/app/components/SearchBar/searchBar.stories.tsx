@@ -6,4 +6,4 @@ export default {
   title: 'Component/SearchBar',
 };
 
-export const Default = () => <SearchBar />;
+export const Default = () => <SearchBar onSearch={() => console.log} />;
