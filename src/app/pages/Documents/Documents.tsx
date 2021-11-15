@@ -17,7 +17,7 @@ export default function Documents(): JSX.Element {
   useEffect(() => {
     async function fetch() {
       const newDocuments = await fetchDocuments(
-        'http://localhost:1337/documents'
+        'http://server.manu-web.de:1337/documents'
       );
       setDocuments(newDocuments);
     }
