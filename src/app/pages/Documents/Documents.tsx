@@ -13,23 +13,20 @@ export default function Documents(): JSX.Element {
       const newDocuments = await fetchDocuments(
         'http://localhost:1337/documents'
       );
-      console.log(newDocuments);
       setDocuments(newDocuments);
     }
     fetch();
   }, []);
 
-  console.log(documents);
-
   return (
     <>
       <h1 className={styles.title}>All Documents</h1>
-      {documents ? (
+      {documents.length === 0 ? (
+        <p className={styles.none}>Nothing to see here</p>
+      ) : (
         documents.map((document) => (
           <AddDocumentCard title={document.title} text={document.text} />
         ))
-      ) : (
-        <p>Nothing to see here</p>
       )}
     </>
   );

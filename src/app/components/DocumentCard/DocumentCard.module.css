@@ -6,10 +6,17 @@
   margin-bottom: 1rem;
 }
 
-.text {
+.textCollapsed {
   overflow: hidden;
   text-overflow: ellipsis;
   display: box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
 }
