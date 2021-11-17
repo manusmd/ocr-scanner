@@ -5,6 +5,11 @@
   padding-top: 10%;
 }
 
+.scanTxt {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .buttons {
   display: grid;
   width: 80%;
@@ -20,8 +25,16 @@
 }
 
 .skipBtn {
+  display: grid;
   height: 2.5rem;
   border-radius: 1rem;
   font-size: 1.5rem;
   border: 2px solid var(--primary-color);
+  text-decoration: none;
+  place-items: center;
+  color: black;
+}
+
+.skipBtn:focus {
+  color: black;
 }
