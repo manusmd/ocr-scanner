@@ -4,6 +4,7 @@ import styles from './Scan.module.css';
 import Progress from '../../components/Progress/Progress';
 import AddDocumentForm from '../../components/AddDocumentForm/AddDocumentForm';
 import useRecognizeText from '../../utils/useRecognizeText';
+import { Link } from 'react-router-dom';
 
 function Scan() {
   const [imageURL, setImageURL] = useState<string>('');
@@ -11,7 +12,11 @@ function Scan() {
 
   return (
     <div className={styles.container}>
-      {text ? <p>{text}</p> : <ImageInput onUpload={setImageURL} />}
+      {text ? (
+        <p className={styles.scanTxt}>{text}</p>
+      ) : (
+        <ImageInput onUpload={setImageURL} />
+      )}
       <div className={styles.buttons}>
         {scanActive && progress && (
           <Progress value={progress.progress * 100} status={progress.status} />
@@ -31,7 +36,9 @@ function Scan() {
             Scan
           </button>
         )}
-        <button className={styles.skipBtn}>Skip</button>
+        <Link className={styles.skipBtn} to="/documents">
+          Skip
+        </Link>
       </div>
     </div>
   );

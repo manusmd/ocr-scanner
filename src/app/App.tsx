@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './App.module.css';
+import Scan from './pages/Scan/Scan';
 
 function App(): JSX.Element {
-  return <h1 className={styles.title}>Hello</h1>;
+  return <Scan />;
 }
 
 export default App;
